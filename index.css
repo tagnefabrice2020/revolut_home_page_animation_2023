@@ -1,0 +1,391 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    font-family: Inter,
+        system-ui,
+        Avenir,
+        Helvetica,
+        Arial,
+        sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: url(/banner.webp);
+    overflow: hidden;
+    background-position: bottom;
+}
+
+
+header {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 40px;
+    padding: 1rem 0;
+    z-index: 999;
+        position: relative;
+}
+
+.header__logo {
+    width: 4rem;
+}
+
+.nav_header ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+    height: 40px;
+}
+
+.nav_header ul li a {
+    color: #fff;
+}
+
+.login_btn {
+    color: #fff;
+}
+
+.register_btn {
+    color: #000;
+    background: #fff;
+    border-radius: 100px;
+    padding: 0.5rem 2rem;
+    border: none;
+    margin: 0;
+}
+
+.social_btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero-1 {
+    max-width: 1000px;
+    margin: 4.8rem auto;
+    padding: 2rem 1rem;
+    z-index: 99999999;
+    position: relative;
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+
+    transition-property: transform, opacity, visibility;
+    transition-duration: 300ms;
+    transition-delay: 0ms 100ms 400ms;
+    transition-timing-function: ease-in-out;
+}
+
+body.animate .hero-1 {
+    transform: translateY(-20%);
+    transition-property: transform, opacity, visibility;
+    transition-delay: 0ms 100ms 400ms;
+    transition-timing-function: ease-in;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.hero-1 h2 {
+    font-size: clamp(4rem, 3.1rem + 1.5vw, 6.5rem);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.hero-1 p {
+    font-size: 1.5rem;
+    width: 400px;
+    margin-top: 1rem;
+    color: #fff;
+}
+
+button {
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    border: none;
+}
+
+.launch_animation {
+    text-decoration: underline;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.hero-2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    min-height: max(100%, 530px);
+    width: 100%;
+    top: 0;
+}
+
+.window {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    width: calc(49.6063vh);
+    height: calc(70vh);
+    transform-origin: center bottom 0px;
+    transform: translateX(-50%) scale(1);
+
+    background: #fff;
+
+    border-top-left-radius: calc(2.5vh);
+    border-top-right-radius: calc(2.5vh);
+
+    transition-property: width, height, border-radius;
+    transition-duration: 300ms;
+    transition-delay: 0ms 0ms 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+body.animate .window {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+}
+
+body .window+div {
+    transform: translateY(-10%);
+    opacity: 0;
+    transition-property: transform, opacity, visibility;
+    transition-duration: 300ms;
+
+    transition-timing-function: ease-in-out;
+}
+
+body.animate .window+div {
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible !important;
+    z-index: 9999;
+}
+
+.carousel {
+
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+    width: 900px;
+
+    left: 50%;
+        transform: translate(-50%);
+
+    transition-property: transform;
+    transition-duration: 300ms;
+}
+
+body.animate header {
+    /* transform: scale(0.8); */
+    z-index: -1;
+    
+}
+
+.carousel div {
+    overflow: hidden;
+}
+
+.card-1 {
+    width: 300px;
+    transform: scale(.9);
+    /* bottom: 0; */
+    position: absolute;
+    transform: scale(1.2);
+    visibility: hidden;
+    border-radius: 1rem;
+
+    opacity: 0;
+
+    transition-property: opacity, visibility, transform, left, bottom;
+    transition-duration: 300ms;
+
+    left: -12rem;
+        bottom: -4rem;
+}
+
+
+
+.card-1 img {
+    width: 100%;
+}
+
+body.animate .card-1 {
+    visibility: visible;
+    bottom: 10rem;
+    transform: scale(0.9);
+    left: -1rem;
+    opacity: 1;
+}
+
+
+
+.card-3 {
+    width: 300px;
+    transform: scale(.9);
+    position: absolute;
+    /* right: 0;
+    bottom: 0; */
+    transform: scale(1.2);
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 1rem;
+
+    transition-property: opacity, visibility, transform, right, bottom;
+    transition-duration: 300ms;
+
+    right: -12rem;
+        bottom: -4rem;
+}
+
+.card-3 img {
+    width: 100%;
+}
+
+body.animate .card-3 {
+    visibility: visible;
+    bottom: 10rem;
+    transform: scale(0.9);
+    right: -1rem;
+    opacity: 1;
+}
+
+
+.card-2 {
+    position: absolute;
+    width: calc(49.6063vh);
+    transform: translate(-50%);
+    left: 50%;
+    bottom: 0;
+
+    height: calc(70vh);
+    outline: 0.2rem solid #c8c6c6;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+
+    transition-property: bottom, width, transform, height;
+    transition-duration: 300ms;
+}
+
+.card-2 div {
+    width: calc(49.6063vh);
+    height: calc(70vh);
+    position: absolute;
+    bottom: 0;
+    transform: translate(50%);
+    z-index: 23344444;
+    left: -50%;
+
+
+
+
+    transition-property: bottom, width, transform, height;
+    transition-duration: 300ms;
+}
+
+.card-2>img:nth-child(1) {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-2>div>img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 22;
+    object-fit: cover;
+    height: 110vh;
+    width: 126vh;
+    transform-origin: 50% 100%;
+
+}
+
+body.animate .card-2 div,
+body.animate .card-2 {
+    width: calc(39.6063vh);
+    height: calc(50vh);
+    border-radius: 1rem;
+}
+
+body.animate .card-2 {
+    bottom: 10rem;
+    outline: none;
+}
+
+.avartar {
+    background: transparent;
+    height: 110vh;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+    bottom: 0;
+}
+
+.inner-avartar {
+    transform: translateY(-35%) scale(1.1);
+    width: 100%;
+
+    object-fit: cover;
+    height: 100vh;
+
+    transition-property: transform;
+    transition-duration: 300ms;
+
+    transition-timing-function: ease-in-out;
+
+}
+
+body.animate .inner-avartar {
+    transform: translateY(-25%) scale(1);
+}
+
+.close {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 2rem;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 20px);
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .mobile {
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .desktop {
+        display: none;
+    }
+
+    body {
+        background: #fff;
+    }
+}
